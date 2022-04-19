@@ -23,7 +23,7 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			if (format[i + 1] == '\0')
-			{	print_buf(buffer, ibuf), free(buffer), va_end(arguments);
+			{	print_buf(buffer, ibuf), free(buffer), va_end(ptr);
 				return (-1);
 			}
 			else
@@ -36,7 +36,7 @@ int _printf(const char *format, ...)
 				}
 				else
 				{
-					len += function(arguments, buffer, ibuf);
+					len += function(ptr, buffer, ibuf);
 					i += ev_print_func(format, i + 1);
 				}
 			} i++;
