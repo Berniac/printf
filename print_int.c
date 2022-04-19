@@ -2,7 +2,7 @@ include "main.h"
 
 /**
  * print_int - Prints an integer
- * @arguments: input string
+ * @ptr: input string
  * @buf: buffer pointer
  * @ibuf: index for buffer pointer
  *
