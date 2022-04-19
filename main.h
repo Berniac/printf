@@ -1,79 +1,33 @@
-#include "main.h"
-/**
- * check_for_specifiers - checks if there is a valid format specifier
- * @format: possible format specifier
- *
- * Return: pointer to valid function or NULL
- */
-static int (*check_for_specifiers(const char *format))(va_list)
-{
-unsigned int i;
-print_t p[] = {
-{"c", print_c},
-{"s", print_s},
-{"i", print_i},
-{"d", print_d},
-{"u", print_u},
-{"b", print_b},
-{"o", print_o},
-{"x", print_x},
-{"X", print_X},
-{"p", print_p},
-{"S", print_S},
-{"r", print_r},
-{"R", print_R},
-{NULL, NULL}
-};
-for (i = 0; p[i].t != NULL; i++)
-{
-if (*(p[i].t) == *format)
-{
-break;
-}
-}
-return (p[i].f);
-}
-/**
- * _printf - prints anything
- * @format: list of argument types passed to the function
- *
- * Return: number of characters printed
- */
+#ifndef _MAIN_H_
+#define _MAIN_H_
 
+#include <stdarg.h>
+#include <stdlib.h>
+#include <unistd.h>
 
-int _printf(const char *format, ...)
+/**
+  * struct print - structure for printing various types
+ * @t: type to print
+ * @f: function to print
+ */
+typedef struct print
 {
-unsigned int i = 0, count = 0;
-va_list valist;
+char *t;
 int (*f)(va_list);
-if (format == NULL)
-return (-1);
-va_start(valist, format);
-while (format[i])
-{
-for (; format[i] != '%' && format[i]; i++)
-{
-_putchar(format[i]);
-count++;
-}
-if (!format[i])
-return (count);
-f = check_for_specifiers(&format[i + 1]);
-if (f != NULL)
-{
-count += f(valist);
-i += 2;
-continue;
-}
-if (!format[i + 1])
-return (-1);
-_putchar(format[i]);
-count++;
-if (format[i + 1] == '%')
-i += 2;
-else
-i++;
-}
-va_end(valist);
-return (count);
-}
+} print_t;
+int _putchar(char c);
+int _printf(const char *format, ...);
+int print_c(va_list c);
+int print_s(va_list s);
+int print_i(va_list i);
+int print_d(va_list d);
+int print_u(va_list u);
+int print_b(va_list b);
+int print_o(va_list o);
+int print_x(va_list x);
+int print_X(va_list X);
+int print_p(va_list p);
+int print_S(va_list S);
+int print_r(va_list r);
+int print_R(va_list R);
+#endif  /* _MAIN_H */
