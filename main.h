@@ -6,56 +6,30 @@
 #include <unistd.h>
 
 /**
- * struct print - struct for printer functions
- * @type_arg: identifier
- * @f: pointer to a printer functions
- *
- * Description: struct that stores pointers to
- * printer functions.
+ * struct print - structure for printing various types
+ * @t: type to print
+ * @f: function to print
  */
 typedef struct print
 {
-	char *type_arg;
-	int (*f)(va_list, char *, unsigned int);
+char *t;
+int (*f)(va_list);
 } print_t;
 
+int _putchar(char c);
 int _printf(const char *format, ...);
-int print_prg(va_list __attribute__((unused)), char *, unsigned int);
-int print_chr(va_list ptr, char *buf, unsigned int ibuf);
-int print_str(va_list ptr, char *buf, unsigned int ibuf);
-int print_int(va_list ptr, char *buf, unsigned int ibuf);
-int print_bnr(va_list ptr, char *buf, unsigned int ibuf);
-int print_unt(va_list ptr, char *buf, unsigned int ibuf);
-int print_oct(va_list ptr, char *buf, unsigned int ibuf);
-int print_hex(va_list ptr, char *buf, unsigned int ibuf);
-int print_upx(va_list ptr, char *buf, unsigned int ibuf);
-int print_usr(va_list ptr, char *buf, unsigned int ibuf);
-int print_add(va_list ptr, char *buf, unsigned int ibuf);
-int print_rev(va_list ptr, char *buf, unsigned int ibuf);
-int print_rot(va_list ptr, char *buf, unsigned int ibuf);
-int prinlint(va_list ptr, char *buf, unsigned int ibuf);
-int prinlunt(va_list ptr, char *buf, unsigned int ibuf);
-int prinloct(va_list ptr, char *buf, unsigned int ibuf);
-int prinlhex(va_list ptr, char *buf, unsigned int ibuf);
-int prinlupx(va_list ptr, char *buf, unsigned int ibuf);
-int prinhint(va_list ptr, char *buf, unsigned int ibuf);
-int prinhunt(va_list ptr, char *buf, unsigned int ibuf);
-int prinhoct(va_list ptr, char *buf, unsigned int ibuf);
-int prinhhex(va_list ptr, char *buf, unsigned int ibuf);
-int prinhupx(va_list ptr, char *buf, unsigned int ibuf);
-int prinpint(va_list ptr, char *buf, unsigned int ibuf);
-int prinnoct(va_list ptr, char *buf, unsigned int ibuf);
-int prinnhex(va_list ptr, char *buf, unsigned int ibuf);
-int prinnupx(va_list ptr, char *buf, unsigned int ibuf);
-int prinsint(va_list ptr, char *buf, unsigned int ibuf);
-int (*get_print_func(const char *s, int index))(va_list, char *, unsigned int);
-int ev_print_func(const char *s, int index);
-unsigned int handl_buf(char *buf, char c, unsigned int ibuf);
-int print_buf(char *buf, unsigned int nbuf);
-char *fill_binary_array(char *binary, long int int_in, int isneg, int limit);
-char *fill_oct_array(char *bnr, char *oct);
-char *fill_long_oct_array(char *bnr, char *oct);
-char *fill_short_oct_array(char *bnr, char *oct);
-char *fill_hex_array(char *bnr, char *hex, int isupp, int limit);
+int print_c(va_list c);
+int print_s(va_list s);
+int print_i(va_list i);
+int print_d(va_list d);
+int print_u(va_list u);
+int print_b(va_list b);
+int print_o(va_list o);
+int print_x(va_list x);
+int print_X(va_list X);
+int print_p(va_list p);
+int print_S(va_list S);
+int print_r(va_list r);
+int print_R(va_list R);
 
-#endif
+#endif  /* _MAIN_H */
