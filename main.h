@@ -6,14 +6,17 @@
 #include <unistd.h>
 
 /**
- * struct print - structure for printing various types
- * @t: type to print
- * @f: function to print
+ * struct print - struct for printer functions
+ * @type_arg: identifier
+ * @f: pointer to a printer functions
+ *
+ * Description: struct that stores pointers to
+ * printer functions.
  */
 typedef struct print
 {
-        char *t;
-        int (*f)(va_list);
+	char *type_arg;
+	int (*f)(va_list, char *, unsigned int);
 } print_t;
 
 int _printf(const char *format, ...);
@@ -23,7 +26,7 @@ int print_str(va_list ptr, char *buf, unsigned int ibuf);
 int print_int(va_list ptr, char *buf, unsigned int ibuf);
 int print_bnr(va_list ptr, char *buf, unsigned int ibuf);
 int print_unt(va_list ptr, char *buf, unsigned int ibuf);
-int print_oct(va_list ptr, char *buf, unsigned int ibuf);ptr
+int print_oct(va_list ptr, char *buf, unsigned int ibuf);
 int print_hex(va_list ptr, char *buf, unsigned int ibuf);
 int print_upx(va_list ptr, char *buf, unsigned int ibuf);
 int print_usr(va_list ptr, char *buf, unsigned int ibuf);
