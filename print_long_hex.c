@@ -1,9 +1,10 @@
 #include "main.h"
 /**
  * prinlhex - Prints a long decimal in hexadecimal
- * @arguments: input string
+ * @ptr: input string
  * @buf: buffer pointer
  * @ibuf: index for buffer pointer
+ *
  * Return: number of chars printed
  */
 int prinlhex(va_list ptr, char *buf, unsigned int ibuf)
