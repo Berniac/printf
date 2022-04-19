@@ -5,6 +5,7 @@
  * @ptr: input string
  * @buf: buffer pointer
  * @ibuf: index for buffer pointer
+ *
  * Return: number of chars printed.
  */
 int print_rev(va_list ptr, char *buf, unsigned int ibuf)
