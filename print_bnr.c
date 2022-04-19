@@ -2,7 +2,7 @@
 
 /**
  * print_bnr - prints decimal in binary
- * @arguments: input string
+ * @ptr: input string
  * @buf: buffer pointer
  * @ibuf: index for buffer pointer
  *
