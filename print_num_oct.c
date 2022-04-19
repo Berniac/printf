@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * prinnoct - print the number in octal begining with zero
- * @arguments: input string
+ * @ptr: input string
  * @buf: buffer pointer
  * @ibuf: index for buffer pointer
  *
