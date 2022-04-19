@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * prinpint - Print integer with plus symbol
- * @arguments: input string
+ * @ptr: input string
  * @buf: buffer pointer
  * @ibuf: index for buffer pointer
  *
