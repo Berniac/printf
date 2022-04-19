@@ -1,7 +1,7 @@
 #include "holberton.h"
 /**
  * prinnhex - print number in hex begining with zero
- * @arguments: input string
+ * @ptr: input string
  * @buf: buffer pointer
  * @ibuf: index for buffer pointer
  *
