@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * prinlint - prints a long integer
- * @arguments: input string
+ * @ptr: input string
  * @buf: buffer pointer
  * @ibuf: index for buffer pointer
  *
