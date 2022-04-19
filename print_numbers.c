@@ -1,84 +1,79 @@
 #include "main.h"
 
 /**
- * print_int - prints an integer
- * @l: va_list of arguments from _printf
- * @f: pointer to the struct flags determining
- * if a flag is passed to _printf
- * Return: number of char printed
+ * print_i - prints an integer
+ * @i: integer to print
+ *
+ * Return: number of chars and digits printed
  */
-int print_int(va_list l, flags_t *f)
+int print_i(va_list i)
 {
-	int n = va_arg(l, int);
-	int res = count_digit(n);
+	int a[10];
+	int j, m, n, sum, count;
 
-	if (f->space == 1 && f->plus == 0 && n >= 0)
-		res += _putchar(' ');
-	if (f->plus == 1 && n >= 0)
-		res += _putchar('+');
-	if (n <= 0)
-		res++;
-	print_number(n);
-	return (res);
-}
-
-/**
- * print_unsigned - prints an unsigned integer
- * @l: va_list of arguments from _printf
- * @f: pointer to the struct flags determining
- * if a flag is passed to _printf
- * Return: number of char printed
- */
-int print_unsigned(va_list l, flags_t *f)
-{
-	unsigned int u = va_arg(l, unsigned int);
-	char *str = convert(u, 10, 0);
-
-	(void)f;
-	return (_puts(str));
-}
-
-/**
- * print_number - helper function that loops through
- * an integer and prints all its digits
- * @n: integer to be printed
- */
-void print_number(int n)
-{
-	unsigned int n1;
-
+	n = va_arg(i, int);
+	count = 0;
+	m = 1000000000;
+	a[0] = n / m;
+	for (j = 1; j < 10; j++)
+	{
+		m /= 10;
+		a[j] = (n / m) % 10;
+	}
 	if (n < 0)
 	{
 		_putchar('-');
-		n1 = -n;
+		count++;
+		for (j = 0; j < 10; j++)
+			a[j] *= -1;
 	}
-	else
-		n1 = n;
-
-	if (n1 / 10)
-		print_number(n1 / 10);
-	_putchar((n1 % 10) + '0');
+	for (j = 0, sum = 0; j < 10; j++)
+	{
+		sum += a[j];
+		if (sum != 0 || j == 9)
+		{
+			_putchar('0' + a[j]);
+			count++;
+		}
+	}
+	return (count);
 }
 
 /**
- * count_digit - returns the number of digits in an integer
- * for _printf
- * @i: integer to evaluate
- * Return: number of digits
+ * print_d - prints a decimal
+ * @d: decimal to print
+ *
+ * Return: number of chars and digits printed
  */
-int count_digit(int i)
+int print_d(va_list d)
 {
-	unsigned int d = 0;
-	unsigned int u;
+	int a[10];
+	int j, m, n, sum, count;
 
-	if (i < 0)
-		u = i * -1;
-	else
-		u = i;
-	while (u != 0)
+	n = va_arg(d, int);
+	count = 0;
+	m = 1000000000;
+	a[0] = n / m;
+	for (j = 1; j < 10; j++)
 	{
-		u /= 10;
-		d++;
+		m /= 10;
+		a[j] = (n / m) % 10;
 	}
-	return (d);
+	if (n < 0)
+	{
+		_putchar('-');
+		count++;
+		for (j = 0; j < 10; j++)
+			a[j] *= -1;
+	}
+	for (j = 0, sum = 0; j < 10; j++)
+	{
+		sum += a[j];
+		if (sum != 0 || j == 9)
+		{
+			_putchar('0' + a[j]);
+			count++;
+		}
+	}
+	return (count);
 }
