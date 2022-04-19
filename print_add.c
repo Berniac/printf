@@ -2,7 +2,7 @@
 #include <stdio.h>
 /**
  * print_add - Prints the address of an input variable
- * @arguments: input address.
+ * @ptr: input address.
  * @buf: buffer pointer.
  * @ibuf: index for buffer pointer
  *
