@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * print_hex - Prints a decimal in hexadecimal
- * @arguments: input string
+ * @ptr: input string
  * @buf: buffer pointer
  * @ibuf: index for buffer pointer
  *
