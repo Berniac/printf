@@ -32,4 +32,7 @@ int print_S(va_list S);
 int print_r(va_list r);
 int print_R(va_list R);
 
+/* converter */
+char *convert(unsigned long int num, int base, int lowercase);
+
 #endif  /* _MAIN_H */
