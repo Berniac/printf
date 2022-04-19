@@ -2,7 +2,7 @@
 #include <stdio.h>
 /**
  * print_chr - writes the character c to stdout
- * @arguments: input char
+ * @ptr: input char
  * @buf: buffer pointer
  * @ibuf: index for buffer pointer
  *
