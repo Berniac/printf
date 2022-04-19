@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * prinnupx - Prints number in uppercase hex
- * @arguments: input string
+ * @ptr: input string
  * @buf: buffer pointer
  * @ibuf: index for buffer pointer
  *
